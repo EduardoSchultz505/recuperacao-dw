@@ -69,15 +69,19 @@
                 div.appendChild(p)
                 
                 const div2 = document.createElement('div')
+                div2.id = "div2-tabela"
                 
                 const btnEdit = document.createElement('button')
-                btnEdit.src = "editar.png"
-                btnEdit.style.width = "28px"
-                btnEdit.onclick = apagar
+                btnEdit.textContent = 'Editar'
+                btnEdit.classList.add("btn")
+                btnEdit.classList.add("btn-secondary")
                 
-                const btnApagar = document.createElement('img')
-                btnApagar.src = 'lixeira.png'
-                btnApagar.style.width = "25px"
+                const btnApagar = document.createElement('button')
+                btnApagar.textContent = 'Apagar'
+                btnApagar.classList.add("btn")
+                btnApagar.classList.add("btn-secondary")
+                btnApagar.style.marginLeft = "5px"
+                btnApagar.onclick = apagar
                 
                 div.appendChild(p)
 
@@ -91,13 +95,11 @@
         }
         function apagar() {
             let div = document.getElementById("div-tabela")
-            div.style.display = "none"
+            let container = document.getElementById('tabela')
+            tabela.removeChild(div)
+
         }
 
-        function editar() {
-        
-        }
-        
         function limpar() {
             container = document.getElementById('tabela')
             container.textContent = ""
